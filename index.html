@@ -11,10 +11,15 @@
 <body>
     Hello Socket App
 
+    <h2>Hello For Socket IO</h2> Hello
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
+        socket.on('message', (data) => {
+            document.write(data)
+        })
     </script>
 </body>
 
