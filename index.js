@@ -12,9 +12,11 @@ const io = new Server(expressServer)
 io.on('connection', (socket) => {
     console.log("New User Connected");
 
-    setTimeout(() => {
-        socket.send("Learn With Sadik (Server --> Client)")
-    }, 10000);
+    setInterval(() => {
+        let date = new Date()
+        let time = date.getTime()
+        socket.send(time)
+    }, 1000);
 
     socket.on('disconnect', () => {
         console.log("User Disconnected");
