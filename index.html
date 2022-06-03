@@ -29,10 +29,15 @@
         //     document.getElementById('myTime').innerHTML = data
         // })
 
+        // function send() {
+        //     let name = document.getElementById('name').value;
+        //     // alert(name)
+        //     socket.send(name)
+        // }
+
         function send() {
             let name = document.getElementById('name').value;
-            // alert(name)
-            socket.send(name)
+            socket.emit('MyEvent', name)
         }
     </script>
 </body>

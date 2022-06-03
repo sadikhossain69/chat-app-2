@@ -25,7 +25,11 @@ io.on('connection', (socket) => {
     //     socket.emit("MyEvent", time)
     // }, 50);
 
-    socket.on('message', (msg) => {
+    // socket.on('message', (msg) => {
+    //     console.log(msg);
+    // })
+
+    socket.on('MyEvent', (msg) => {
         console.log(msg);
     })
 
