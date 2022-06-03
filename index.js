@@ -12,11 +12,18 @@ const io = new Server(expressServer)
 io.on('connection', (socket) => {
     console.log("New User Connected");
 
+    // setInterval(() => {
+    //     let date = new Date()
+    //     let time = date.getTime()
+    //     socket.send(time)
+    // }, 1000);
+
+
     setInterval(() => {
         let date = new Date()
         let time = date.getTime()
-        socket.send(time)
-    }, 1000);
+        socket.emit("MyEvent", time)
+    }, 50);
 
     socket.on('disconnect', () => {
         console.log("User Disconnected");

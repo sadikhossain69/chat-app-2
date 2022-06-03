@@ -15,7 +15,13 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
-        socket.on('message', (data) => {
+        // socket.on('message', (data) => {
+        //     document.getElementById('myTime').innerHTML = ""
+        //     document.getElementById('myTime').innerHTML = data
+        // })
+
+
+        socket.on('MyEvent', (data) => {
             document.getElementById('myTime').innerHTML = ""
             document.getElementById('myTime').innerHTML = data
         })
